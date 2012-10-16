@@ -1,0 +1,55 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function srlucero_devel_install() {
+  $disable_modules = array(
+    //'toolbar',
+  );
+  $enable_modules = array(
+    //'admin_menu_toolbar',
+    //'devel_debug_log',
+    //'diff',
+    //'maillog',
+    //'features_tools',
+  );
+  $vars = array(
+
+  );
+
+  if (!empty($disable_modules)) {
+    _srlucero_devel_disable_modules($disable_modules);
+  }
+
+  if (!empty($enable_modules)) {
+    _srlucero_devel_enable_modules($enable_modules);
+  }
+}
+
+/**
+ * Helper function to disable modules on install.
+ */
+function _srlucero_devel_disable_modules($modules) {
+  // Filter out non-existent/disabled modules
+  $modules = array_filter($modules, 'module_exists');
+
+  module_disable($modules);
+}
+
+/**
+ * Helper function to enable modules on install.
+ */
+function _srlucero_devel_enable_modules($modules) {
+  module_enable($modules);
+}
+
+/**
+ * Helper function to set default variables.
+ */
+function _srlucero_devel_set_vars($vars) {
+
+}
