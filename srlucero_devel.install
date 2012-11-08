@@ -1,6 +1,8 @@
 <?php
 /**
  * @file
+ *
+ * @todo Write function documentation.
  */
 
 /**
@@ -31,6 +33,21 @@ function srlucero_devel_install() {
 }
 
 /**
+ * Implements hook_enable().
+ */
+function srlucero_devel_enable() {
+  // Disable caching and asset preprocessing
+  $vars = array(
+    'preprocess_css' => 0,
+    'preprocess_js' => 0,
+    'cache' => 0,
+    'block_cache' => 0,
+  );
+
+  _srlucero_devel_set_vars($vars);
+}
+
+/**
  * Helper function to disable modules on install.
  */
 function _srlucero_devel_disable_modules($modules) {
@@ -51,5 +68,7 @@ function _srlucero_devel_enable_modules($modules) {
  * Helper function to set default variables.
  */
 function _srlucero_devel_set_vars($vars) {
-
+  foreach ($vars as $var => $value) {
+    variable_set($var, $value);
+  }
 }
