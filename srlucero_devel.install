@@ -42,6 +42,7 @@ function srlucero_devel_enable() {
     'preprocess_js' => 0,
     'cache' => 0,
     'block_cache' => 0,
+    'devel_error_handlers' => array('4' => 4),
   );
 
   _srlucero_devel_set_vars($vars);
