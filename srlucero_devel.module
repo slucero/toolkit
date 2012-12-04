@@ -44,3 +44,12 @@ function reference(&$a, &$b) {
     $e = &$a;
     return refcount($b) != $d;
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * General hook for altering the node base form.
+ */
+//function srlucero_devel_form_node_form_alter(&$form, &$form_state, $form_id) {
+//  dpm(func_get_args(), __FUNCTION__);
+//}
