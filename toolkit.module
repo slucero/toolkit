@@ -21,6 +21,13 @@ function toolkit_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_admin_menu_output_build().
+ */
+function toolkit_admin_menu_output_build(&$content) {
+  dpm($content);
+}
+
+/**
  * Return the reference count of a variable.
  * 
  * Returns 0 if a variable has no reference other than itself or doesn't
