@@ -8,7 +8,7 @@
 /**
  * Implements hook_install().
  */
-function srlucero_devel_install() {
+function toolkit_install() {
   $disable_modules = array(
     //'toolbar',
   );
@@ -24,18 +24,18 @@ function srlucero_devel_install() {
   );
 
   if (!empty($disable_modules)) {
-    _srlucero_devel_disable_modules($disable_modules);
+    _toolkit_disable_modules($disable_modules);
   }
 
   if (!empty($enable_modules)) {
-    _srlucero_devel_enable_modules($enable_modules);
+    _toolkit_enable_modules($enable_modules);
   }
 }
 
 /**
  * Implements hook_enable().
  */
-function srlucero_devel_enable() {
+function toolkit_enable() {
   // Disable caching and asset preprocessing
   $vars = array(
     'preprocess_css' => 0,
@@ -45,13 +45,13 @@ function srlucero_devel_enable() {
     'devel_error_handlers' => array('4' => 4),
   );
 
-  _srlucero_devel_set_vars($vars);
+  _toolkit_set_vars($vars);
 }
 
 /**
  * Helper function to disable modules on install.
  */
-function _srlucero_devel_disable_modules($modules) {
+function _toolkit_disable_modules($modules) {
   // Filter out non-existent/disabled modules
   $modules = array_filter($modules, 'module_exists');
 
@@ -61,14 +61,14 @@ function _srlucero_devel_disable_modules($modules) {
 /**
  * Helper function to enable modules on install.
  */
-function _srlucero_devel_enable_modules($modules) {
+function _toolkit_enable_modules($modules) {
   module_enable($modules);
 }
 
 /**
  * Helper function to set default variables.
  */
-function _srlucero_devel_set_vars($vars) {
+function _toolkit_set_vars($vars) {
   foreach ($vars as $var => $value) {
     variable_set($var, $value);
   }

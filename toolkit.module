@@ -5,7 +5,7 @@
  *
  * Handy for easily inspecting forms as they're built.
  */
-function srlucero_devel_form_alter(&$form, &$form_state, $form_id) {
+function toolkit_form_alter(&$form, &$form_state, $form_id) {
   $forms = array(
 
   );
@@ -50,6 +50,6 @@ function reference(&$a, &$b) {
  *
  * General hook for altering the node base form.
  */
-//function srlucero_devel_form_node_form_alter(&$form, &$form_state, $form_id) {
+//function toolkit_form_node_form_alter(&$form, &$form_state, $form_id) {
 //  dpm(func_get_args(), __FUNCTION__);
 //}

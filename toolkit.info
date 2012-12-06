@@ -1,0 +1,7 @@
+name = Devel Toolkit
+description = A development toolkit module.
+core = 7.x
+
+dependencies[] = devel
+
+files[] = toolkit.taxonomy.inc

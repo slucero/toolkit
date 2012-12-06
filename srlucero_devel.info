@@ -1,7 +1,0 @@
-name = SRLucero Development
-description = A development helper module.
-core = 7.x
-
-dependencies[] = devel
-
-files[] = srlucero_devel.taxonomy.inc
