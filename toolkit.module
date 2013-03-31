@@ -21,13 +21,6 @@ function toolkit_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Implements hook_admin_menu_output_build().
- */
-function toolkit_admin_menu_output_build(&$content) {
-  dpm($content);
-}
-
-/**
  * Implements hook_form_BASE_FORM_ID_alter().
  *
  * General hook for altering the node base form.
