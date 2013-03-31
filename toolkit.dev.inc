@@ -5,6 +5,18 @@
  */
 
 /**
+ * A utility function for easily debugging function arguments.
+ *
+ * Outputs a function name and its arguments.
+ */
+function function_debug() {
+  $trace = debug_backtrace();
+  dpm(array(
+    $trace[1]['function'] => $trace[1]['args'],
+  ));
+}
+
+/**
  * Return the reference count of a variable.
  * 
  * Returns 0 if a variable has no reference other than itself or doesn't
