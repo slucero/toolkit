@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * A wrapper function for function_debug().
+ *
+ * @see function_debug().
+ */
+function fd() {
+  function_debug();
+}
+
+/**
  * Implements hook_form_alter().
  *
  * Handy for easily inspecting forms as they're built.

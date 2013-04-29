@@ -7,13 +7,26 @@
 /**
  * A utility function for easily debugging function arguments.
  *
- * Outputs a function name and its arguments.
+ * Outputs a function's name and its arguments.
+ *
+ * @see fd().
  */
 function function_debug() {
   $trace = debug_backtrace();
-  dpm(array(
-    $trace[1]['function'] => $trace[1]['args'],
-  ));
+  $output = array();
+
+  if ($trace[1]['function'] == 'fd') {
+    $output = array(
+      $trace[2]['function'] => $trace[2]['args'],
+    );
+  }
+  else {
+    $output = array(
+      $trace[1]['function'] => $trace[1]['args'],
+    );
+  }
+
+  dpm($output);
 }
 
 /**
