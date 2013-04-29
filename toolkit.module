@@ -6,6 +6,7 @@
  * @see function_debug().
  */
 function fd() {
+  module_load_include('inc', 'toolkit', 'toolkit.dev');
   function_debug();
 }
 
