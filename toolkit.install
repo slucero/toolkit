@@ -51,18 +51,18 @@ function toolkit_enable() {
 /**
  * Helper function to disable modules on install.
  */
-function _toolkit_disable_modules($modules) {
+function _toolkit_disable_modules($modules, $check_dependencies = TRUE) {
   // Filter out non-existent/disabled modules
   $modules = array_filter($modules, 'module_exists');
 
-  module_disable($modules);
+  module_disable($modules, $check_dependencies);
 }
 
 /**
  * Helper function to enable modules on install.
  */
-function _toolkit_enable_modules($modules) {
-  module_enable($modules);
+function _toolkit_enable_modules($modules, $check_dependencies = TRUE) {
+  module_enable($modules, $check_dependencies);
 }
 
 /**
