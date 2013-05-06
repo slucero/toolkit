@@ -30,6 +30,13 @@ function function_debug() {
 }
 
 /**
+ * A utility function for easily removing orphaned actions.
+ */
+function toolkit_remove_orphaned_actions() {
+  actions_synchronize(actions_list(), TRUE);
+}
+
+/**
  * A utility function for programatically reverting designated modules.
  *
  * @param $modules
